@@ -1,0 +1,29 @@
+Source: pytest-datadir
+Section: python
+Priority: optional
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders: Pierre-Elliott Bécue <peb@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-setuptools,
+               python3-setuptools-scm,
+               tox
+Standards-Version: 4.5.1
+Rules-Requires-Root: no
+Homepage: https://github.com/gabrielcnr/pytest-datadir
+Vcs-Git: https://salsa.debian.org/python-team/packages/pytest-datadir.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/pytest-datadir
+
+Package: python3-pytest-datadir
+Architecture: all
+Depends: python3-pytest, ${misc:Depends}, ${python3:Depends}
+Description: py.test plugin for manipulating test data directories and files
+ pytest-datadir will look up for a directory with the name of the current
+ module or the global 'data' folder, and allow one to access the content of
+ these files using injected variables datadir or shared_datadir.
+ .
+ The files in the data dirs are copied to a temporary path before tests being
+ run. Henceforth, a modification won't happen on the original files.
+ .
+ This package provides the py.test plugin for Python 3 code.

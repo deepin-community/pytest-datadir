@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+#export DH_VERBOSE=1
+#export DEB_BUILD_OPTIONS=nocheck
+export PYBUILD_NAME=pytest-datadir
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_clean:
+
+override_dh_auto_test:
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -f debian/python3-pytest-datadir/usr/LICENSE

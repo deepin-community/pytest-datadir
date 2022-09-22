@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+cp -a tests "${AUTOPKGTEST_TMP}"
+cd "${AUTOPKGTEST_TMP}"
+
+for py in $(py3versions -s); do
+    echo "[*] testing on $py:"; $py -Wd -m pytest -v -x -s 2>&1;
+done

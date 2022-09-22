@@ -1,0 +1,4 @@
+Tests: python3-pytest-datadir
+Depends: python3-all,
+         python3-pytest,
+         python3-pytest-datadir
